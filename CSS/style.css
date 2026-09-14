@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --dark: #241a16;
+  --brown: #8b5e3c;
+  --cream: #f8f2e9;
+  --white: #fffdf9;
+  --muted: #74685f;
+  --line: #e8ddd0;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--dark);
+  background: var(--cream);
+  font-family: "DM Sans", sans-serif;
+}
+header {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  background: rgba(248,242,233,.92);
+  border-bottom: 1px solid var(--line);
+}
+.logo {
+  color: var(--dark);
+  text-decoration: none;
+  font: 700 30px "Playfair Display", serif;
+}
+.logo span, h1 span { color: var(--brown); }
+nav { display: flex; gap: 30px; }
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+nav a:hover, nav a.active { color: var(--dark); }
+.hero {
+  min-height: calc(100vh - 125px);
+  padding: 7% 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+.hero-copy { max-width: 620px; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brown);
+}
+h1 {
+  font: 700 clamp(46px, 7vw, 86px)/1.02 "Playfair Display", serif;
+  margin: 18px 0;
+}
+.hero-copy > p:not(.eyebrow), .intro > p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 17px;
+  max-width: 600px;
+}
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 22px;
+  background: var(--dark);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.coffee-art { width: 330px; height: 330px; position: relative; }
+.cup {
+  position: absolute; width: 210px; height: 170px; left: 45px; top: 95px;
+  border-radius: 0 0 90px 90px; background: white; box-shadow: 0 20px 35px #3a24151f;
+}
+.coffee { width: 175px; height: 34px; margin: 10px auto; border-radius: 50%; background: #4c2c1d; }
+.cup:after {
+  content:""; position:absolute; right:-58px; top:35px; width:65px; height:70px;
+  border: 14px solid white; border-left: 0; border-radius: 0 50% 50% 0;
+}
+.saucer {
+  position:absolute; width:270px; height:25px; left:30px; bottom:35px;
+  border-radius:50%; background:#e4d3bf;
+}
+.steam {
+  position:absolute; width:25px; height:70px; top:15px;
+  border-left: 3px solid #cdbbaa; border-radius:50%; transform:rotate(10deg);
+}
+.steam.one { left:125px; } .steam.two { left:175px; height:55px; transform:rotate(-8deg); }
+.page { max-width: 1100px; margin: 0 auto; padding: 80px 30px 100px; min-height: calc(100vh - 125px); }
+.intro { max-width: 750px; margin-bottom: 55px; }
+.intro h1 { font-size: clamp(48px, 7vw, 76px); }
+.cards { display:grid; grid-template-columns:repeat(2, 1fr); gap:25px; }
+.card {
+  position:relative; background:var(--white); padding:42px; border:1px solid var(--line);
+  border-radius:24px; box-shadow:0 12px 35px #3a24150d;
+}
+.card.featured { background:#30221b; color:white; }
+.card p { color:var(--muted); line-height:1.7; }
+.featured p { color:#d8cbc0; }
+.card-icon { font-size:42px; margin-bottom:20px; }
+.card h2 { font:600 32px "Playfair Display", serif; margin:0 0 14px; }
+.price { margin-top:25px; font-weight:700; font-size:20px; }
+.badge {
+  position:absolute; top:20px; right:20px; padding:7px 12px;
+  border-radius:999px; background:#d6ad7b; color:#30221b; font-size:12px; font-weight:700;
+}
+.story { display:grid; grid-template-columns:1fr 1fr; gap:25px; }
+.story > div { padding:35px; border-top:1px solid var(--line); }
+.story h2 { font:600 30px "Playfair Display", serif; }
+.story p { color:var(--muted); line-height:1.8; }
+footer { text-align:center; padding:25px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); }
+@media (max-width: 700px) {
+  header { padding:0 5%; } nav { gap:14px; font-size:14px; }
+  .hero { padding:55px 7%; flex-direction:column; text-align:center; }
+  .hero-copy > p:not(.eyebrow) { margin-left:auto; margin-right:auto; }
+  .coffee-art { transform:scale(.82); margin-top:-20px; }
+  .cards, .story { grid-template-columns:1fr; }
+  .page { padding:55px 20px 75px; }
+}
